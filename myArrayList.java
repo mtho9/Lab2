@@ -188,14 +188,26 @@ public boolean contains(Fraction input) {
 			
 		}
 		
+		/*Ethan Gilles
+		 * sets last returned as the previous item
+		 * reduces index by one
+		 * then returns the actual fraction that is set to last returned
+		 */
 		public Fraction previous() {
-			
-			
+			lastReturned = list[i-1];
+			index--;
+			return list[i-1];
 		}
 		
+		/* Ethan Gilles
+		 * if index is 0, throws and exception
+		 * else it returns the index before where the iterator is
+		 */
 		public int previousIndex() {
-			
-			
+			if(index == 0 ) {
+				throw new IndexOutOfBoundsException();
+			}
+			return index-1;
 		}
 		
 		public void remove() {
