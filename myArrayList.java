@@ -188,7 +188,6 @@ public boolean contains(Fraction input) {
 		//Coby Andersen
 		/*
   		*checks the reverse direction to see if there are more elements and changes the iterator
-    		*Automatically throws exceptions
       		*Returns true if there is a previous element, false otherwise
 		*/
 		public boolean hasPrevious() {
