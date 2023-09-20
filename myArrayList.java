@@ -156,8 +156,8 @@ public boolean contains(Fraction input) {
 	}
 	
 	private class myArrayListIterator implements Iterator<Fraction>{
-		Fraction lastReturned = null;
-		int index = 0;
+		Fraction lastReturned = null; // last returned fraction
+		int index = 0; //index where the iterator is
 		
 		public myArrayListIterator() {
 			
@@ -173,6 +173,9 @@ public boolean contains(Fraction input) {
 			
 		}
 		
+		/* Ethan Gilles
+		 * uses previous index method to determine if there is a previous number in the array
+		 */
 		public boolean hasPrevious() {
 			return previousIndex() != -1;
 		}
