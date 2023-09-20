@@ -162,17 +162,21 @@ public boolean contains(Fraction input) {
 		public myArrayListIterator() {
 			
 		}
-		
+		//Coby Andersen
 		public void add(Fraction frac) {
-			
-			
+			 int index = currentIndex + 1;
+           		 myArrayList.this.add(index, frc);
+           		 currentIndex++;
+           		 lastReturnedIndex = -1;
+        }
+
 		}
-		
+		//Coby Andersen
 		public boolean hasNext() {
 			return currentIndex < size -1;
 			
 		}
-		
+		//Coby Andersen
 		public boolean hasPrevious() {
 			return currentIndex > 0;
 			
