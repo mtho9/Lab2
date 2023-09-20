@@ -155,6 +155,58 @@ public boolean contains(Fraction input) {
 		list = bigArray;
 	}
 	
+	private class myArrayListIterator implements Iterator<Fraction>{
+		Fraction lastReturned = null;
+		int index = 0;
+		
+		public myArrayListIterator() {
+			
+		}
+		
+		public void add(Fraction frac) {
+			
+			
+		}
+		
+		public boolean hasNext() {
+			
+			
+		}
+		
+		public boolean hasPrevious() {
+			
+			
+		}
+		
+		public Fraction next() {
+			
+			
+		}
+		
+		public int nextIndex() {
+			
+			
+		}
+		
+		public Fraction previous() {
+			
+			
+		}
+		
+		public int previousIndex() {
+			
+			
+		}
+		
+		public void remove() {
+			
+		}
+		
+		public void set(Fraction frac) {
+			
+		}
+	}
+	
 }
 
 
