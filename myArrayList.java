@@ -156,9 +156,8 @@ public boolean contains(Fraction input) {
 	}
 	
 	private class myArrayListIterator implements Iterator<Fraction>{
-		Fraction lastReturned = null;
-		int index = 0;
-		boolean calledNext = false;
+		Fraction lastReturned = null; // last returned fraction
+		int index = 0; //index where the iterator is
 		
 		public myArrayListIterator() {
 			
@@ -174,9 +173,11 @@ public boolean contains(Fraction input) {
 			
 		}
 		
+		/* Ethan Gilles
+		 * uses previous index method to determine if there is a previous number in the array
+		 */
 		public boolean hasPrevious() {
-			
-			
+			return previousIndex() != -1;
 		}
 		
 		public Fraction next() {
@@ -189,35 +190,34 @@ public boolean contains(Fraction input) {
 			
 		}
 		
+		/*Ethan Gilles
+		 * sets last returned as the previous item
+		 * reduces index by one
+		 * then returns the actual fraction that is set to last returned
+		 */
 		public Fraction previous() {
-			
-			
+			lastReturned = list[i-1];
+			index--;
+			return list[i-1];
 		}
 		
+		/* Ethan Gilles
+		 * if index is 0, throws and exception
+		 * else it returns the index before where the iterator is
+		 */
 		public int previousIndex() {
-			
-			
+			if(index == 0 ) {
+				return -1;
+			}
+			return index-1;
 		}
 		
-		/**
-		 * Nathaniel Serrano
-		 * remove() - Removes the lastReturned value in iterator
-		 */
 		public void remove() {
-			if () 
-		        throw new UnsupportedOperationException("remove");
-			list.remove(lastReturned);
+			
 		}
 		
-		/**
-		 * Nathaniel Serrano
-		 * set() - Sets the lastReturned value in iterator to be 
-		 * the inputted Fraction object.
-		 * @param frac - A Fraction object
-		 */
 		public void set(Fraction frac) {
-			if (next)
-			lastReturned = frac;
+			
 		}
 	}
 	
