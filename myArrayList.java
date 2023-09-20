@@ -174,8 +174,7 @@ public boolean contains(Fraction input) {
 		}
 		
 		public boolean hasPrevious() {
-			
-			
+			return previousIndex() != -1;
 		}
 		
 		public Fraction next() {
@@ -205,7 +204,7 @@ public boolean contains(Fraction input) {
 		 */
 		public int previousIndex() {
 			if(index == 0 ) {
-				throw new IndexOutOfBoundsException();
+				return -1;
 			}
 			return index-1;
 		}
