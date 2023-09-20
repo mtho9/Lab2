@@ -169,12 +169,12 @@ public boolean contains(Fraction input) {
 		}
 		
 		public boolean hasNext() {
-			
+			return currentIndex < size -1;
 			
 		}
 		
 		public boolean hasPrevious() {
-			
+			return currentIndex > 0;
 			
 		}
 		
