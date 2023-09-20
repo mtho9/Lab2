@@ -163,21 +163,24 @@ public boolean contains(Fraction input) {
 			
 		}
 		
+		//Coby Andersen
 		public void add(Fraction frac) {
-			
-			
-		}
-		
+			index++;
+           	myArrayList.this.add(index, frc);
+           	index++;
+           	lastReturned = null;
+        }
+
+		//Coby Andersen
 		public boolean hasNext() {
-			
+			return index < size -1;
 			
 		}
 		
-		/* Ethan Gilles
-		 * uses previous index method to determine if there is a previous number in the array
-		 */
+		//Coby Andersen
 		public boolean hasPrevious() {
-			return previousIndex() != -1;
+			return index > 0;
+
 		}
 		
 		public Fraction next() {
