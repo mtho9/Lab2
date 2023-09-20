@@ -158,6 +158,7 @@ public boolean contains(Fraction input) {
 	private class myArrayListIterator implements Iterator<Fraction>{
 		Fraction lastReturned = null; // last returned fraction
 		int index = 0; //index where the iterator is
+		boolean nextCalled=false;
 		
 		public myArrayListIterator() {
 			
@@ -212,12 +213,26 @@ public boolean contains(Fraction input) {
 			return index-1;
 		}
 		
+		/**
+		 * Nathaniel Serrano
+		 * remove() - Removes the lastReturned value in iterator
+		 */
 		public void remove() {
 			
+			if (!nextCalled) 
+		        throw new UnsupportedOperationException("remove");
+			list.remove(lastReturned);
 		}
 		
+		/**
+		 * Nathaniel Serrano
+		 * set() - Sets the lastReturned value in iterator to be 
+		 * the inputted Fraction object.
+		 * @param frac - A Fraction object
+		 */
 		public void set(Fraction frac) {
-			
+			if (nextCalled)
+			lastReturned = frac;
 		}
 	}
 	
