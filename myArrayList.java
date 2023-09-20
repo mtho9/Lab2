@@ -162,7 +162,11 @@ public boolean contains(Fraction input) {
 		public myArrayListIterator() {
 			
 		}
+		
 		//Coby Andersen
+		/*
+  		
+  		*/
 		public void add(Fraction frac) {
 			 int index = currentIndex + 1;
            		 myArrayList.this.add(index, frc);
@@ -172,11 +176,17 @@ public boolean contains(Fraction input) {
 
 		}
 		//Coby Andersen
+		/* returns true if there is another token in its input
+  		*/
 		public boolean hasNext() {
 			return currentIndex < size -1;
 			
 		}
 		//Coby Andersen
+		/*
+  		/checks the reverse direction to see if there are more elements and changes the iterator
+    		/Automatically throws exceptions
+		*/
 		public boolean hasPrevious() {
 			return currentIndex > 0;
 			
