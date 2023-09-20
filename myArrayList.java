@@ -160,20 +160,42 @@ public boolean contains(Fraction input) {
 		int index = 0; //index where the iterator is
 		boolean nextCalled=false;
 		
-		public myArrayListIterator() {
+	public myArrayListIterator() {
 			
 		}
 		
+		//Coby Andersen
+		/*
+  		*Adds a fraction object to the myArrayList
+    		* frac the Fraction object to be added to the ist
+  		*/
 		public void add(Fraction frac) {
-			
-			
-		}
+			 int index = currentIndex + 1;
+           		 myArrayList.this.add(index, frc);
+           		 currentIndex++;
+           		 lastReturnedIndex = -1;
+        }
+
 		
+		//Coby Andersen
+		/* 
+  		* returns true if there is another token in its input
+    		* @param true if there is a next element, false otherwise
+  		*/
 		public boolean hasNext() {
-			
+			return currentIndex < size -1;
 			
 		}
-		
+		//Coby Andersen
+		/*
+  		*checks the reverse direction to see if there are more elements and changes the iterator
+    		*Automatically throws exceptions
+      		*Returns true if there is a previous element, false otherwise
+		*/
+		public boolean hasPrevious() {
+			return currentIndex > 0;
+			
+		}
 		/* Ethan Gilles
 		 * uses previous index method to determine if there is a previous number in the array
 		 */
