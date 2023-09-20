@@ -199,6 +199,7 @@ public boolean contains(Fraction input) {
 		public Fraction previous() {
 			lastReturned = list[i-1];
 			index--;
+			nextCalled = true;
 			return list[i-1];
 		}
 		
@@ -218,10 +219,10 @@ public boolean contains(Fraction input) {
 		 * remove() - Removes the lastReturned value in iterator
 		 */
 		public void remove() {
-			
 			if (!nextCalled) 
 		        throw new UnsupportedOperationException("remove");
-			list.remove(lastReturned);
+			myArrayList.remove(lastReturned);
+			nextCalled = false;
 		}
 		
 		/**
@@ -231,8 +232,11 @@ public boolean contains(Fraction input) {
 		 * @param frac - A Fraction object
 		 */
 		public void set(Fraction frac) {
-			if (nextCalled)
+			if (!nextCalled)
+				throw new UnsupportedOperationException("set");
 			lastReturned = frac;
+			nextCalled = false;
+				
 		}
 	}
 	
