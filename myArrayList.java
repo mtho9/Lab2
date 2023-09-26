@@ -158,8 +158,42 @@ public boolean contains(Fraction input) {
 	private class myArrayListIterator implements Iterator<Fraction>{
 		Fraction lastReturned = null; // last returned fraction
 		int index = 0; //index where the iterator is
+		boolean nextCalled=false;
 		
-		public myArrayListIterator() {
+	public myArrayListIterator() {
+			
+		}
+		
+		//Coby Andersen
+		/*
+  		*Adds a fraction object to the myArrayList
+    		* frac the Fraction object to be added to the ist
+  		*/
+		public void add(Fraction frac) {
+			 int index = currentIndex + 1;
+           		 myArrayList.this.add(index, frc);
+           		 currentIndex++;
+           		 lastReturnedIndex = -1;
+        }
+
+		
+		//Coby Andersen
+		/* 
+  		* returns true if there is another token in its input
+    		* @param true if there is a next element, false otherwise
+  		*/
+		public boolean hasNext() {
+			return currentIndex < size -1;
+			
+		}
+		//Coby Andersen
+		/*
+  		*checks the reverse direction to see if there are more elements and changes the iterator
+    		*Automatically throws exceptions
+      		*Returns true if there is a previous element, false otherwise
+		*/
+		public boolean hasPrevious() {
+			return currentIndex > 0;
 			
 		}
 
@@ -228,6 +262,7 @@ public boolean contains(Fraction input) {
 		public Fraction previous() {
 			lastReturned = list[i-1];
 			index--;
+			nextCalled = true;
 			return list[i-1];
 		}
 		
@@ -242,12 +277,29 @@ public boolean contains(Fraction input) {
 			return index-1;
 		}
 		
+		/**
+		 * Nathaniel Serrano
+		 * remove() - Removes the lastReturned value in iterator
+		 */
 		public void remove() {
-			
+			if (!nextCalled) 
+		        throw new UnsupportedOperationException("remove");
+			myArrayList.remove(lastReturned);
+			nextCalled = false;
 		}
 		
+		/**
+		 * Nathaniel Serrano
+		 * set() - Sets the lastReturned value in iterator to be 
+		 * the inputted Fraction object.
+		 * @param frac - A Fraction object
+		 */
 		public void set(Fraction frac) {
-			
+			if (!nextCalled)
+				throw new UnsupportedOperationException("set");
+			lastReturned = frac;
+			nextCalled = false;
+				
 		}
 	}
 	
