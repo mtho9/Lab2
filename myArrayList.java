@@ -156,45 +156,45 @@ public boolean contains(Fraction input) {
 	}
 	
 	private class myArrayListIterator implements Iterator<Fraction>{
-		Fraction lastReturned = null;
-		int index = 0;
+		Fraction lastReturned = null; // last returned fraction
+		int index = 0; //index where the iterator is
 		
 		public myArrayListIterator() {
 			
 		}
-	
+
      	/** Coby Andersen
       	 * Adds a fraction object to the myArrayList
       	 * 
          * frac the Fraction object to be added to the list
          */
 		public void add(Fraction frac) {
-			 int index = currentIndex + 1;
-           		 myArrayList.this.add(index, frc);
-           		 currentIndex++;
-           		 lastReturnedIndex = -1;
+			index++;
+           	myArrayList.this.add(index, frc);
+           	index++;
+           	lastReturned = null;
         }
 
-		}
-		
+
 	    /** Coby Andersen
   		 * returns true if there is another token in its input
   		 * 
     	 * @param true if there is a next element, false otherwise
   		 */
 		public boolean hasNext() {
-			return currentIndex < size -1;
+			return index < size -1;
 			
 		}
 		
+
 		/** Coby Andersen
   		 * checks the reverse direction to see if there are more elements and changes the iterator
   		 *
          * Returns true if there is a previous element, false otherwise
 		 */
 		public boolean hasPrevious() {
-			return currentIndex > 0;
-			
+			return index > 0;
+
 		}
 		
 		/** Mandy Ho
@@ -220,14 +220,26 @@ public boolean contains(Fraction input) {
 	        return currentIndex;
 	    }
 		
+		/*Ethan Gilles
+		 * sets last returned as the previous item
+		 * reduces index by one
+		 * then returns the actual fraction that is set to last returned
+		 */
 		public Fraction previous() {
-			
-			
+			lastReturned = list[i-1];
+			index--;
+			return list[i-1];
 		}
 		
+		/* Ethan Gilles
+		 * if index is 0, throws and exception
+		 * else it returns the index before where the iterator is
+		 */
 		public int previousIndex() {
-			
-			
+			if(index == 0 ) {
+				return -1;
+			}
+			return index-1;
 		}
 		
 		public void remove() {
