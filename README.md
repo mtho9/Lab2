@@ -6,12 +6,13 @@ Coby Andersen
 - hasPrevious()boolean
 
 Mandy
+- main method testing
 - next()Fraction
 - nextIndex()int
 
 Ethan
--previous()Fraction
--previousIndex()int
+- previous()Fraction
+- previousIndex()int
 
 
 Nathan

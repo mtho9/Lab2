@@ -196,22 +196,63 @@ public boolean contains(Fraction input) {
 			return currentIndex > 0;
 			
 		}
-		/* Ethan Gilles
-		 * uses previous index method to determine if there is a previous number in the array
+
+     	/** Coby Andersen
+      	 * Adds a fraction object to the myArrayList
+      	 * 
+         * frac the Fraction object to be added to the list
+         */
+		public void add(Fraction frac) {
+			index++;
+           	myArrayList.this.add(index, frc);
+           	index++;
+           	lastReturned = null;
+        }
+
+
+	    /** Coby Andersen
+  		 * returns true if there is another token in its input
+  		 * 
+    	 * @param true if there is a next element, false otherwise
+  		 */
+		public boolean hasNext() {
+			return index < size -1;
+			
+		}
+		
+
+		/** Coby Andersen
+  		 * checks the reverse direction to see if there are more elements and changes the iterator
+  		 *
+         * Returns true if there is a previous element, false otherwise
 		 */
 		public boolean hasPrevious() {
-			return previousIndex() != -1;
+			return index > 0;
+
 		}
 		
-		public Fraction next() {
-			
-			
-		}
+		/** Mandy Ho
+		 * Returns the next element in the iteration and advances the iterator position.
+		 *
+		 * @return The next Fraction element in the iteration.
+		 * @throws NoSuchElementException if there are no more elements to iterate over.
+		 */
+	    public Fraction next() {
+	        if (!hasNext()) {
+	            throw new NoSuchElementException();
+	        }
+	        lastIndexReturned = currentIndex; // Save the index of the last element returned
+	        return list[currentIndex++];
+	    }
 		
-		public int nextIndex() {
-			
-			
-		}
+	    /** Mandy Ho
+	     * Returns the index of the next element
+	     *
+	     * @return The index of the next element
+	     */
+	    public int nextIndex() {
+	        return currentIndex;
+	    }
 		
 		/*Ethan Gilles
 		 * sets last returned as the previous item
@@ -263,5 +304,3 @@ public boolean contains(Fraction input) {
 	}
 	
 }
-
-
