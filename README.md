@@ -1,5 +1,5 @@
 # Lab2
-
+Run myArrayList in order to see method testing.
 Coby Andersen 
 - add(fraction frc) void
 - hasNext()boolean
