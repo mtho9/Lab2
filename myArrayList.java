@@ -1,5 +1,8 @@
 package lab1;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class myArrayList {
     private static final int INITIAL_CAPACITY = 50;
     private static final double GROWTH_RATE = 0.2;
@@ -50,7 +53,7 @@ public class myArrayList {
         System.out.println("Contains Fraction (1/2): " + containsFraction);
 
         // Lab 2 Testing
-        myArrayList<Fraction> fractionList = new myArrayList<>();
+        myArrayList fractionList = new myArrayList();
         fractionList.add(new Fraction(1, 2));
         fractionList.add(new Fraction(3, 4));
         fractionList.add(new Fraction(5, 6));
@@ -90,7 +93,6 @@ public class myArrayList {
         }
     }
 
-    }
 
     /** Coby Andersen
      * Adds a Fraction object to the myArrayList.
@@ -273,8 +275,8 @@ public class myArrayList {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            lastIndexReturned = currentIndex; // Save the index of the last element returned
-            return list[currentIndex++];
+            lastReturned = index; // Save the index of the last element returned
+            return list[index++];
         }
 
         /**
@@ -283,7 +285,7 @@ public class myArrayList {
          * @return The index of the next element
          */
         public int nextIndex() {
-            return currentIndex;
+            return index++;
         }
 
         /**
@@ -291,10 +293,10 @@ public class myArrayList {
          * then returns the actual fraction that is set to last returned
          */
         public Fraction previous() {
-            lastReturned = list[i - 1];
+            lastReturned = list[index - 1];
             index--;
             nextCalled = true;
-            return list[i - 1];
+            return list[index - 1];
         }
 
         /**
